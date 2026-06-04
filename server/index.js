@@ -18,6 +18,6 @@ app.get('/api/message', (req, res) => {
   res.json({ message: 'Hello from the server!' });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT,"0.0.0.0" , () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
 });
