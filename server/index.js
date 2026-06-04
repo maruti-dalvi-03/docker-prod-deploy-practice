@@ -6,7 +6,13 @@ const PORT = 4000;
 
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:5174"],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  }),
+);
 
 app.get('/api/message', (req, res) => {
   res.json({ message: 'Hello from the server!' });
